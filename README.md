@@ -59,8 +59,8 @@ Android第三方库——FlowLayout
    当点击ListView的条目的FlowLayout中的数据的时候，将数据添加到顶部的FlowLayou中，
    当点击顶部的FlowLayout中数据的时候，将数据添加到底部ListView的条目上的FlowLayout中
    实现代码
-      视图绘制
-      ```
+      视图绘制</br>
+```
        <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
