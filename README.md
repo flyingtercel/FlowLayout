@@ -2,10 +2,10 @@
 Android第三方库——FlowLayout
 
 一、添加依赖
-  compile 'com.nex3z:flow-layout:0.1.2'  
+  compile 'com.nex3z:flow-layout:0.1.2'  </br>
 二、使用
-     1.在Xml中声明：
-     ```
+     1.在Xml中声明：</br>
+```
           <span style="font-size:12px;"><com.nex3z.flowlayout.FlowLayout  
               android:id="@+id/flow_layout"  
               android:layout_width="match_parent"  
@@ -20,9 +20,9 @@ Android第三方库——FlowLayout
               childSpacingForLastRow：子控件最后一行的间距  
               rtl = "true" 一行从右往左一次排列  
           --></span>  
-          ```
+```
     2.给子控件设置shape
-    ```
+          ```
           <span style="font-size:12px;"><shape xmlns:android="http://schemas.android.com/apk/res/android">  
               <solid android:color="#ff00ff"/>  
               <corners android:radius="25dp"/>  
@@ -55,8 +55,7 @@ Android第三方库——FlowLayout
                } 
                ```
    本应用是在继承Android基础上做了一些修改，实现对FlowLayout中的数据添加与删除。
-   首先在顶部定义了一个FlowLayout,
-   在下面定义了一个ListView,而ListView的item上也是一个FlowLayout,
+   首先在顶部定义了一个FlowLayout,在下面定义了一个ListView,而ListView的item上也是一个FlowLayout,
    当点击ListView的条目的FlowLayout中的数据的时候，将数据添加到顶部的FlowLayou中，
    当点击顶部的FlowLayout中数据的时候，将数据添加到底部ListView的条目上的FlowLayout中
    实现代码
@@ -185,7 +184,6 @@ Android第三方库——FlowLayout
   ```
   
      ListView的适配器中的逻辑实现
-     ```
         public class CustomAdapter extends BaseAdapter {
           private Context context;
           private Custom custom;
@@ -274,7 +272,6 @@ Android第三方库——FlowLayout
               void removeData(Custom.M m,int postion);
           }
       }
-       ```   
           
           
           
