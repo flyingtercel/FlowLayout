@@ -5,6 +5,7 @@ Android第三方库——FlowLayout
   compile 'com.nex3z:flow-layout:0.1.2'  
 二、使用
      1.在Xml中声明：
+     ```
           <span style="font-size:12px;"><com.nex3z.flowlayout.FlowLayout  
               android:id="@+id/flow_layout"  
               android:layout_width="match_parent"  
@@ -19,14 +20,17 @@ Android第三方库——FlowLayout
               childSpacingForLastRow：子控件最后一行的间距  
               rtl = "true" 一行从右往左一次排列  
           --></span>  
+          ```
     2.给子控件设置shape
+    ```
           <span style="font-size:12px;"><shape xmlns:android="http://schemas.android.com/apk/res/android">  
               <solid android:color="#ff00ff"/>  
               <corners android:radius="25dp"/>  
               <stroke android:width="1dp" android:color="#3799f4"/>  
           </shape</span>>    
-          
+         ``` 
      3.java代码中动态添加子控件
+     ```
             private void getList(List<ListBean> list) {  
                    mFlowLayout = (FlowLayout) findViewById(R.id.flow_layout);  
                    /** 
@@ -49,6 +53,7 @@ Android第三方库——FlowLayout
                        mFlowLayout.addView(textView);  
                    }  
                } 
+               ```
    本应用是在继承Android基础上做了一些修改，实现对FlowLayout中的数据添加与删除。
    首先在顶部定义了一个FlowLayout,
    在下面定义了一个ListView,而ListView的item上也是一个FlowLayout,
@@ -56,6 +61,7 @@ Android第三方库——FlowLayout
    当点击顶部的FlowLayout中数据的时候，将数据添加到底部ListView的条目上的FlowLayout中
    实现代码
       视图绘制
+      ```
        <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -89,8 +95,10 @@ Android第三方库——FlowLayout
         </ScrollView>
 
     </LinearLayout>
+```
 
      Activity中的逻辑实现
+     ```
      public class MainActivity extends AppCompatActivity implements CustomAdapter.ICustomData{
 
       private Custom custom;
@@ -174,9 +182,10 @@ Android第三方库——FlowLayout
           flowLayout.addView(tv, lp);
       }
   }
-  
+  ```
   
      ListView的适配器中的逻辑实现
+     ```
         public class CustomAdapter extends BaseAdapter {
           private Context context;
           private Custom custom;
@@ -265,7 +274,7 @@ Android第三方库——FlowLayout
               void removeData(Custom.M m,int postion);
           }
       }
-          
+       ```   
           
           
           
