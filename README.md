@@ -272,6 +272,39 @@ Android第三方库——FlowLayout
               void removeData(Custom.M m,int postion);
           }
       }
-          
+   ```
+   ##### 设置在屏幕上向右滑动的时候能够将抽屉打开
+   ```
+   //主视图的事件处理过程
+        mian_layout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                //判断手势有没有在这个视图中的水平方向滑动
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        //获取点击的坐标
+                        posX = (int) event.getX();
+                        posY = (int) event.getY();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        //如果大于10，标识滑动了
+                        curPosX = (int) event.getX();
+                        curPosY = (int) event.getY();
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        //判断在X轴方向滑动的距离是不是大于125，并且判断x轴方向滑动的距离是不是大于y轴滑动的距离
+                        if ((curPosX-posX>125) && (curPosX-posX)-(curPosY-posY)>0){
+                            //如果满足，则打开抽屉
+                            if (!drawerLayout.isDrawerOpen(navigationView)){
+                                drawerLayout.openDrawer(navigationView);
+                            }
+                        }
+                        break;
+                }
+
+                return true;
+            }
+        });
+   ```
           
           
